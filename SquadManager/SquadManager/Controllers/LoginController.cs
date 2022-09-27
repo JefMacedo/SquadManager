@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FluentValidation.Results;
+using Microsoft.AspNetCore.Mvc;
+using SquadManager.Models;
+using SquadManager.Validator;
 
 namespace SquadManager.Controllers
 {
@@ -6,7 +9,31 @@ namespace SquadManager.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            UserViewModel user = new UserViewModel();
+
+            user.Email = "adadasd";
+
+            UserValidator validator = new UserValidator();
+
+            ValidationResult results = validator.Validate(user);
+
+            if (!results.IsValid)
+            {
+                foreach(var failure in results.Errors)
+                {
+                    Console.WriteLine("Property "+ failure.PropertyName +"failed validation. Error was: " + failure.ErrorMessage);
+                }
+            }
+
+            return View("Index", user);
+        }
+
+        [HttpPost]
+        public IActionResult Test(UserViewModel user)
+        {
+            user.Email = "Email Enviado";
+
+            return View("Index", user);
         }
     }
 }
