@@ -9,12 +9,12 @@
 <section>
     <h1>Autenticação</h1>
 
-    <form action="/" method="post">
-        <input type="text" name="email" value="" placeholder="Username/E-mail"/>
-        <input type="password" name="password" value="" placeholder="Senha"/>
+    <form action="/Login/Test" method="post">
+        <input type="text" name="email" value="@Model.Email" placeholder="Username/E-mail"/>
+        <input type="password" name="password" value="@Model.Password" placeholder="Senha"/>
         <a href="#">Esqueceu a senha?</a>
 
-        <button>Login</button>
+        <button type="submit">Login</button>
     </form>
 
     <label>Não tem conta?
