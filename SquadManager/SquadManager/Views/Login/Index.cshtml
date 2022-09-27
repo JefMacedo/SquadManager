@@ -4,15 +4,20 @@
     Layout = null;
 }
 
+<link rel="stylesheet" href="~/css/login.css" />
+
 <section>
     <h1>Autenticação</h1>
-    <input type="text" name="email" value="" placeholder="Username/E-mail"/>
-    <input type="password" name="password" value="" placeholder="Senha"/>
-    <a href="#">Esqueceu a senha?</a>
 
-    <button>Login</button>
+    <form action="/" method="post">
+        <input type="text" name="email" value="" placeholder="Username/E-mail"/>
+        <input type="password" name="password" value="" placeholder="Senha"/>
+        <a href="#">Esqueceu a senha?</a>
 
-    <label>Não tem conta?</label>
-    <a href="#">Clique Aqui</a>
+        <button>Login</button>
+    </form>
+
+    <label>Não tem conta?
+    <a href="#">Clique Aqui</a></label>
 
 </section>
