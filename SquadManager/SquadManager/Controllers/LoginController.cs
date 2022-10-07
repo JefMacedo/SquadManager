@@ -19,21 +19,21 @@ namespace SquadManager.Controllers
 
             if (!results.IsValid)
             {
-                foreach(var failure in results.Errors)
+                foreach (var failure in results.Errors)
                 {
-                    Console.WriteLine("Property "+ failure.PropertyName +"failed validation. Error was: " + failure.ErrorMessage);
+                    Console.WriteLine("Property " + failure.PropertyName + "failed validation. Error was: " + failure.ErrorMessage);
                 }
             }
 
             return View("Index", user);
         }
 
-        [HttpPost]
-        public IActionResult Test(UserViewModel user)
-        {
-            user.Email = "Email Enviado";
+        //[HttpPost]
+        //public IActionResult Test(UserViewModel user)
+        //{
+        //    user.Email = "Email Enviado";
 
-            return View("Index", user);
-        }
+        //    return View("Index", user);
+        //}
     }
 }
